@@ -1,0 +1,117 @@
+Important ubuntu tools-
+
+CPU Power Manager Extention- For Processor power management.
+Bleachbit- For disk cleanup
+Synaptic Package- For package management
+xxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Shortcuts-
+Ctrl + Shift + Drag a file to a directory to create shortcut
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+To show dependencies on a software-
+apt-cache showpkg imagemagick
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Wine and MS Office-
+Make sure to install Wine64.
+Uninstall softwares from wine uninstaller or wine64 uninstaller
+Remove home/.wine to completely clean wine
+remove home/.local/share/applications to remove wine super menu entries
+
+To install ms office open terminal in directory of setup.
+Wine setup.exe
+Enter key and complete installation
+open winecfg, go to libraries and add Riched20 library from menu
+Hit edit and change to Native(Windows)
+Apply, OK.
+Use MS Office seamlessly.
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Minimize Dock Icons:
+gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
+
+Revert to previous setting- gsettings reset org.gnome.shell.extensions.dash-to-dock click-action
+Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+For cleaning
+
+sudo apt-get autoremove
+sudo apt-get autoclean
+
+Better, use BleachBit with Root Access
+xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+tlpui installation-
+
+sudo add-apt-repository ppa:linuxuprising/apps
+sudo apt update
+sudo apt install tlpui
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Toggle touchpad script
+Save script with filename.sh
+Run Script by ./filename.sh
+
+
+#!/bin/bash
+
+state=$( gsettings get org.gnome.desktop.peripherals.touchpad send-events )
+
+if [ "$state" = "'enabled'" ];then
+    gsettings set org.gnome.desktop.peripherals.touchpad send-events 'disabled' \
+        && notify-send -i touchpad-disabled-symbolic "Touchpad" "Disabled"
+else
+    gsettings set org.gnome.desktop.peripherals.touchpad send-events 'enabled' \
+        && notify-send -i input-touchpad-symbolic "Touchpad" "Enabled"
+fi
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+For grammar check in open office- 
+
+
+sudo apt-get install openjdk-8-jre
+You may also need this package
+sudo apt-get install libreoffice-java-common
+Install language tools extention for open office.
+Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Control Android on ubuntu-
+Install scrcpy
+enable usb debugging in file transfer mode. The phone will want to confirm an RSA signature and ask you to confirm if you want to establish connection with this computer (name of computer will be shown).
+Then open terminal and run scrcpy
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Proxy-
+Open Network in Settings
+Set Manual. 
+login:password@IP and give the port
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Playing on Bluetooth and Laptop soundcard simultaneously-
+
+sudo apt install paprefs 
+pulseaudio –k (to restart audio software so that paprefs can take effect)
+
+Run- paprefs
+Choose simultaneous from outputs tab.
+Go to sound settings from ubuntu settings and select output device as simultaneous.
+Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Drop .desktop files here to add them to app drawer start menu
+~/.local/share/applications (ctrl + h to show hidden folders/files)
+Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Network editor-
+Alt+F2
+nm-connection-editor
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Enable Trash in NTFS partition or drive-
+Unmount the drive.
+Open disks. Go to mount options. Go to the box for editing etc/fstab.
+Replace 
+nosuid,nodev,nofail,x-gvfs-show
+with
+ntfs-3g users,uid=1000,dmask=027,fmask=137,x-gvfs-show,utf8 0 0
+Remount the drive.
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
