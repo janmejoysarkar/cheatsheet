@@ -22,3 +22,11 @@ Now this changes brightness directly in Gnome.
 Fact: /sys/class/backlight/intel_backlight/brightness gives current monitor brightness.
 Ref- https://itectec.com/ubuntu/ubuntu-lenovo-ideapad-brightness-keys-not-generating-any-events-in-ubuntu-16-04-1/
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Change windows partition to Read Only-
+Open Disks.
+Edit Mount Options for Windows system partition.
+Turn off auto mount.
+Add ,ro at the end of the mount conditions.
+Remount the drive.
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
