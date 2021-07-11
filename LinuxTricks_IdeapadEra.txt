@@ -1,4 +1,5 @@
 Fix touchpad not working-
+
 Lenovo Ideapad Slim 3 uses ELAN touchpad which is not included in the Linux c=kernel that comes with Ubuntu 20.04LTS. DO the following to solve the issue.
 Open sudo nano etc/default/grub 
 Edit- GRUB_CMDLINE_LINUX="i18042.nopnp=1 pci=nocrs"
@@ -6,9 +7,18 @@ Save (Ctrl+O) and exit (Ctrl+X)
 Update grub- sudo update-grub
 Reboot.
 Touchpad will work as normal.
+Ref- https://www.youtube.com/watch?v=ZFs8rsTVLtc&list=LL&index=1
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 Fix Tearing of video while in fullscreen in Totem video player and Firefox-
 Use VLC and Google Chrome instead and the problem will be fixed.
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
+Fix Monitor Brightness buttons not working-
+Install xdotool
+xdotool key 232 and xdotool key 233 commands decreases and increases screen brightness respectively.
+Map the two commands to F11 and F12 from the custom shortcuts in settings.
+Now this changes brightness directly in Gnome.
+Fact: /sys/class/backlight/intel_backlight/brightness gives current monitor brightness.
+Ref- https://itectec.com/ubuntu/ubuntu-lenovo-ideapad-brightness-keys-not-generating-any-events-in-ubuntu-16-04-1/
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
