@@ -30,3 +30,7 @@ Turn off auto mount.
 Add ,ro at the end of the mount conditions.
 Remount the drive.
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Check log of installed packages-
+grep " install" /var/log/dpkg.log*
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
