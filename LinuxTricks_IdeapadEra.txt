@@ -34,3 +34,13 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Check log of installed packages-
 grep " install" /var/log/dpkg.log*
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+PopOS tiling window manager extention-
+sudo apt install node-typescript make
+git clone https://github.com/pop-os/shell
+cd shell
+make local-install
+
+OR, use the downloaded zip. Extract and copy to Home. Run the make command in the directory.
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
