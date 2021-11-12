@@ -44,3 +44,22 @@ make local-install
 OR, use the downloaded zip. Extract and copy to Home. Run the make command in the directory.
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
+Enable or disable Conservation Mode for Lenovo Ideapad.
+
+In Conservation mode batteru charges to 60% and stays that much. This can be toggled in 
+Lenovo Vantage application on Windows.
+
+Commands:
+reading the current status:                          
+cat /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
+
+enable Conservation mode:
+echo 1 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
+
+disable conservation mode:
+echo 0 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
+
+Source: https://www.youtube.com/watch?v=d1l2Fg1Nx4E
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
