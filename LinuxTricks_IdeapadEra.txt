@@ -53,6 +53,10 @@ Commands:
 reading the current status:                          
 cat /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
 
+Before toggling Conservation mode, run-
+sudo su
+Otherwise permission denied will come up.
+
 enable Conservation mode:
 echo 1 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
 
