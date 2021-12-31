@@ -1,0 +1,2 @@
+Monitor was turning off and not coming back on after locking account or switching user.
+Install xscreensaver. That will solve it.
