@@ -67,3 +67,14 @@ Source: https://www.youtube.com/watch?v=d1l2Fg1Nx4E
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
+Modified icons pack-
+ Place the folders in
+ /home/janmejoy/.local/share/icons/
+ 
+ Browse for the theme in the KDE Icon Settings.
+ Papirus is parent folder. Most other icons are linked to this directory.
+ 
+ Icon pack- https://drive.google.com/file/d/12XyS0YGeuQNdscofanVVGtNyP5al7vtj/view?usp=sharing
+ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ 
+ 
