@@ -76,5 +76,6 @@ Modified icons pack-
  
  Icon pack- https://drive.google.com/file/d/12XyS0YGeuQNdscofanVVGtNyP5al7vtj/view?usp=sharing
  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
- 
+ See devices on network-
+ sudo nmap -sn [default gateway ip]/24
  
