@@ -83,3 +83,6 @@ Modified icons pack-
  route
  The flag U indicates that route is up and G indicates that it is gateway
  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ xev
+ To see the keyboard button and mouse responses.
+ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
