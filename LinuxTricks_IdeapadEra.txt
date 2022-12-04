@@ -89,4 +89,6 @@ Modified icons pack-
  ps -e
  To see running processes
  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
- 
+ To sort files in a folder based on filesize
+ du -h --max-depth=1 | sort -h
+ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
