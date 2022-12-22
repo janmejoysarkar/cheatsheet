@@ -92,3 +92,7 @@ Modified icons pack-
  To sort files in a folder based on filesize
  du -h --max-depth=1 | sort -h
  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ To change screen brightness / to change monitor config from teminal
+ xrandr --output HDMI-1 --brightness 0.7
+ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ 
