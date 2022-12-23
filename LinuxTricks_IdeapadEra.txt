@@ -21,6 +21,12 @@ Map the two commands to F11 and F12 from the custom shortcuts in settings.
 Now this changes brightness directly in Gnome.
 Fact: /sys/class/backlight/intel_backlight/brightness gives current monitor brightness.
 Ref- https://itectec.com/ubuntu/ubuntu-lenovo-ideapad-brightness-keys-not-generating-any-events-in-ubuntu-16-04-1/
+
+Update: For use with i3wm, the screen backlight brightness can be changed with 
+brightnessctl set 40% #setbacklight to 40%
+But this requires root previliges. To remove root access use chown to make yourself the owner of this file- /sys/class/backlight/intel_backlight/brightness
+
+xrandr --output [device name] --brightness [0-1] can be used to change the LCD brightness. This does not reduce backlight. Good for desktop monitors.
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 Change windows partition to Read Only-
