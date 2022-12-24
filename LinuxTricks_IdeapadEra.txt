@@ -82,6 +82,27 @@ Modified icons pack-
  
  Icon pack- https://drive.google.com/file/d/12XyS0YGeuQNdscofanVVGtNyP5al7vtj/view?usp=sharing
  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ Transparent Taskbar and menus:
+Method 2. This will require altering the default theme. Make a backup of /usr/share/plasma/desktoptheme/default/metadata.desktop. Open it with root rights. Change in the [ContrastEffect] section enabled=true to false. Re-login.
+Now the panel(s) become semi-transparent. As a bonus the main menu also becomes semi-transparent with blur effect under it. 
+
+https://itectec.com/ubuntu/ubuntu-how-to-make-kde-plasma-taskbar-panel-transparent/
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Icon Pack used: ePapirus
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+KDE Plasma Window Tiling:
+Krohnkite script on Kwin scripts in KDE Plasma
+
+Enable Krohnkite settings:
+mkdir -p ~/.local/share/kservices5/
+ln -s ~/.local/share/kwin/scripts/krohnkite/metadata.desktop ~/.local/share/kservices5/krohnkite.desktop
+
+Use KWin Global shortcuts to modify key bindings.
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ 
  See devices on network-
  sudo nmap -sn [default gateway ip]/24
  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
