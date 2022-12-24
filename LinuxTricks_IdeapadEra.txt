@@ -102,3 +102,14 @@ Modified icons pack-
  xrandr --output HDMI-1 --brightness 0.7
  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
  
+ Using Dolphin in i3wm
+ Dolphin icons dont show up by default as it is a Qt application and i3wm is not a Qt environment. So a Qt emulator has to be installed.
+ sudo apt install qt5ct
+ create ~/.bash_profile
+ add the line export QT_QPA_PLATFORMTHEME=qt5ct 
+ This asks bash to qt5ct as the Qt platform theme.
+ Launch qt5ct to modify fonts and iconpacks.
+ Logout and login to see the changes.
+ 
+ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ 
