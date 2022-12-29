@@ -195,15 +195,20 @@ If you prefer to use the edge of your touchpad:
         Option "ScrollMethod" "edge"
 Copy code
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
 Bluetooth speakers connection
-rfkill 
+
+Turn ON or OFF BT adapter:
+rfkill list #shows which devices are blocked
+rfkill unblock bluetooth #enable bluetooth
+rfkill block bluetooth  #disable bluetooth
+
 systemctl status bluetooth.service
- if enabled
+ (if it is enabled)
+(other options- systemctl [start/stop] bluetooth.service)
+
 bluetoothctl power on
 scan on
 devices #to see list of devices
 connect [MAC ID]
 scan off
-
-
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
