@@ -196,3 +196,14 @@ If you prefer to use the edge of your touchpad:
 Copy code
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
+Bluetooth speakers connection
+rfkill 
+systemctl status bluetooth.service
+ if enabled
+bluetoothctl power on
+scan on
+devices #to see list of devices
+connect [MAC ID]
+scan off
+
+
