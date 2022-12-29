@@ -197,6 +197,8 @@ Copy code
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Bluetooth speakers connection
 
+http://leetschau.github.io/manage-bluetooth-in-i3wm.html
+
 Turn ON or OFF BT adapter:
 rfkill list #shows which devices are blocked
 rfkill unblock bluetooth #enable bluetooth
