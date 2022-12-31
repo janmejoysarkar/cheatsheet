@@ -181,7 +181,7 @@ bar {
 	position top
 	mode dock
 	tray_output primary
-	tray_padding 0
+	#tray_padding 5
 	font pango:Helvetica 12
 	status_command i3blocks
 	colors {
@@ -191,36 +191,12 @@ bar {
 	}
 }
 
-# Window color settings
-# class                 border  backgr. text    indicator
-client.focused          #0066ff #b32400 #d8dee9 #81a1c1
-#client.unfocused        #ff6666 #8FBCBB #2e3440 #8FBCBB
-#client.focused_inactive #4c566a #81a1c1 #2e3440 #2e3440
-#client.placeholder      #4c566a #2e3440 #4c566a #2e3440
-#client.urgent           #4c566a #BF616A #d8dee9 #BF616A
-#client.background       #2e3440
-
-# move workspace to display
-bindsym $mod+x move workspace to output right
-bindsym $mod+z move workspace to output left
-
-#add gaps with i3-gaps
-gaps inner 10
-gaps outer 0
-
-#remove title bars (Comment this section to reappear title bars)
-default_border pixel 3
-default_floating_border pixel 3
-
 #custom keybinds
-bindsym $mod+F10 exec /$HOME/.config/i3/i3_monitor.sh
+bindsym $mod+F10 exec /home/janmejoy/.config/i3/i3_monitor.sh
 bindsym $mod+Shift+d exec i3-dmenu-desktop
 bindsym Print exec gnome-screenshot && sleep 1 && notify-send "Screenshot saved"
 bindsym Shift+Print exec gnome-screenshot -a
-bindsym $mod+Ctrl+l exec i3lock
-bindsym --release $mod+XF86PowerOff exec "systemctl suspend"
-bindsym $mod+F11 exec "brightnessctl set 5%- && notify-send Brightness $(brightnessctl get)"
-bindsym $mod+F12 exec "brightnessctl set +5% && notify-send Brightness $(brightnessctl get)" 
 
-#startup executables
-exec --no-startup-id /$HOME/.config/i3/autostart.sh
+#custom executables
+exec --no-startup-id dunst
+exec --no-startup-id "dropbox start"
