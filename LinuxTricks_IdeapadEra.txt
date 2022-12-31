@@ -218,3 +218,10 @@ Suspend session
 systemctl suspend
 #this does not lock the screen
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Use brightnessctl without sudo:
+
+As per udev rules in /usr/lib/udev/rules.d/90-brightnessctl.rules user in video group can change brightness without sudo.
+
+Add user to video group-
+sudo usermod -aG video ${USER}
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
