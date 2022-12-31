@@ -214,3 +214,7 @@ devices #to see list of devices
 connect [MAC ID]
 scan off
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Suspend session
+systemctl suspend
+#this does not lock the screen
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
