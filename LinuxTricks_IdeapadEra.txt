@@ -231,3 +231,16 @@ conda config --set auto_activate_base false
 The first time you run it, it'll create a .condarc in your home directory with that setting to override the default. This wouldn't de-clutter your .bash_profile but it's a cleaner solution without manual editing that section that conda manages.
 
 To enable base environ- conda config --set auto_activate_base true
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Set power key to lock and suspend
+
+install xss-lock to lock the screen before it suspends. xss-lock is started by the i3config by default.
+
+edit the file- /etc/systemd/logind.conf
+Uncomment 2 options and edit them as follows-
+HandlePowerKey=suspend
+PowerKeyIgnoreInhibited=yes
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
