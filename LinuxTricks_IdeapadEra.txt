@@ -242,5 +242,9 @@ Uncomment 2 options and edit them as follows-
 HandlePowerKey=suspend
 PowerKeyIgnoreInhibited=yes
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Replace spaces with underscore- Batch rename
+
+for file in *; do mv "$file" `echo $file | tr ' ' '_'` ; done
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
