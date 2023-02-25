@@ -55,10 +55,11 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+#bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -67,10 +68,11 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+#bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -79,17 +81,17 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+#bindsym $mod+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+v split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -102,7 +104,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+c focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -156,10 +158,11 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+        #bindsym semicolon resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 5 px or 5 ppt
@@ -180,12 +183,12 @@ bindsym $mod+r mode "resize"
 bar {
 	position top
 	mode dock
-	tray_output primary
+	#tray_output primary
 	tray_padding 0
 	font pango:Helvetica 12
 	status_command i3blocks
 	colors {
-	      background #2e3440
+	      background #242424
 	      statusline #d8dee9
 	      separator #8FBCBB
 	}
@@ -193,7 +196,7 @@ bar {
 
 # Window color settings
 # class                 border  backgr. text    indicator
-client.focused          #0066ff #b32400 #d8dee9 #81a1c1
+client.focused          #ffcc66 #ffcc66 #d8dee9 #81a1c1
 #client.unfocused        #ff6666 #8FBCBB #2e3440 #8FBCBB
 #client.focused_inactive #4c566a #81a1c1 #2e3440 #2e3440
 #client.placeholder      #4c566a #2e3440 #4c566a #2e3440
@@ -207,7 +210,7 @@ bindsym $mod+z move workspace to output left
 #add gaps with i3-gaps
 for_window [class="^.*"] border pixel 3 
 gaps inner 10
-smart_borders on #removes border when only 1 window is open
+#smart_borders on #removes border when only 1 window is open
 
 # Master-stack layout (kind of)
 default_orientation vertical
@@ -215,6 +218,7 @@ for_window [class=".*"] split toggle
 
 #custom keybinds
 bindsym $mod+F10 exec /$HOME/.config/i3/i3_monitor.sh
+default_floating_border normal
 bindsym $mod+Shift+d exec i3-dmenu-desktop
 bindsym Print exec gnome-screenshot && sleep 1 && notify-send "Screenshot saved"
 bindsym Shift+Print exec gnome-screenshot -a
@@ -222,5 +226,6 @@ bindsym $mod+Ctrl+l exec i3lock
 bindsym --release $mod+XF86PowerOff exec "systemctl suspend"
 bindsym $mod+F11 exec "brightnessctl set 5%- && notify-send Brightness $(brightnessctl get)"
 bindsym $mod+F12 exec "brightnessctl set +5% && notify-send Brightness $(brightnessctl get)" 
+
 #startup executables
 exec --no-startup-id /$HOME/.config/i3/autostart.sh
