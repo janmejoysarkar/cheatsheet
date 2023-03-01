@@ -250,3 +250,7 @@ Share files
 curl -F "file=@filename" 0x0.st
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
+Change Running CPUs:
+echo 1 > /sys/devices/system/cpu/cpu3/online
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
