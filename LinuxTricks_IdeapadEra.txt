@@ -251,6 +251,8 @@ curl -F "file=@filename" 0x0.st
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 Change Running CPUs:
-echo 1 > /sys/devices/system/cpu/cpu3/online
+echo 0 > /sys/devices/system/cpu/cpu3/online #disable CPUs
+echo 1 > /sys/devices/system/cpu/cpu3/online #enable CPUs
+
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
