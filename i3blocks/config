@@ -1,18 +1,18 @@
-full_text=〉
+full_text= ❱ 
 align=left
 separator=false
-separator_block_width=3
+separator_block_width=1
 
 [window]
 command=xdotool getwindowname $(xdotool getactivewindow)
-label= Window
+label=
 interval=repeat
 
 [separator]
 
 [memory]
 command=$HOME/.config/i3blocks/memory/memory
-label=💾
+label=🎟
 interval=30
 
 #[memory]
@@ -24,14 +24,14 @@ interval=30
 [separator]
 
 [disk]
-label=📀
+label=🖴
 command=df -h | grep "/$" | awk '{print $5}'
 interval=600
 
 [separator]
 
 [volume]
-label=🔊
+label=♪
 command=$HOME/.config/i3blocks/volume/volume
 interval=1
 
@@ -47,10 +47,17 @@ interval=30
 
 [separator]
 
-[time]
-label=⏰
-command=date '+%a, %d %b %Y | %H:%M'
+[date]
+label=🗓
+command=date '+%a, %d %b %Y'
 interval=10
+
+[separator]
+
+[time]
+label=⏲
+command=date '+%H:%M:%S'
+interval=1
 
 [separator]
 
@@ -59,6 +66,6 @@ command=$HOME/.config/i3blocks/custom/bluetooth.sh
 interval=10
 
 [red_screen_toggle]
-full_text=🌞
+full_text=⦿
 command=$HOME/.config/i3blocks/custom/red_screen_toggle.sh
 
