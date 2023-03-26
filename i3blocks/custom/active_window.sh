@@ -1,1 +1,0 @@
-xdotool getwindowname $(xdotool getactivewindow)
