@@ -254,5 +254,26 @@ Change Running CPUs:
 echo 0 > /sys/devices/system/cpu/cpu3/online #disable CPUs
 echo 1 > /sys/devices/system/cpu/cpu3/online #enable CPUs
 
+Change intel turbo boost (Saves a lot of battery power. Increases battery life > 2x)
+
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
+Disable turbo boost (with root):
+echo 1 > /sys/devices/system/cpu/intel_pstate/no_turbo
+
+Enable turbo boost (with root):
+echo 0 > /sys/devices/system/cpu/intel_pstate/no_turbo
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+gpg encryption with default AES-256
+
+Encryption:
+gpg -c --no-symkey-cache file.txt
+
+Decryption:
+gpg -d --no-symkey-cache file.txt
+
+--no-symkey-cache Prevents adding the passphrase to the gpg pw cache (or keyring). So passphrase has to be entered for decryption and encryption every time.
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
