@@ -277,3 +277,7 @@ gpg -d --no-symkey-cache file.txt
 --no-symkey-cache Prevents adding the passphrase to the gpg pw cache (or keyring). So passphrase has to be entered for decryption and encryption every time.
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Password generator: pwgen
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
