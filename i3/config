@@ -23,6 +23,9 @@ font pango:monospace 11
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
+#Screen timeout set to 0s. Change the last digit to change screen timeout.
+exec --no-startup-id xset dpms 0 0 0
+
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 333333 --nofork
@@ -217,12 +220,12 @@ default_orientation vertical
 for_window [class=".*"] split toggle 
 
 #custom keybinds
-bindsym $mod+F10 exec /$HOME/.config/i3/i3_monitor.sh
+bindsym $mod+F10 exec xrandr --auto
 default_floating_border normal
 bindsym $mod+Shift+d exec i3-dmenu-desktop
 bindsym Print exec gnome-screenshot && sleep 1 && notify-send "Screenshot saved"
 bindsym Shift+Print exec gnome-screenshot -a
-bindsym $mod+Ctrl+l exec i3lock
+bindsym $mod+Ctrl+l exec loginctl lock-session
 bindsym --release $mod+XF86PowerOff exec "systemctl suspend"
 bindsym $mod+F11 exec "brightnessctl set 5%- && notify-send Brightness $(brightnessctl get)"
 bindsym $mod+F12 exec "brightnessctl set +5% && notify-send Brightness $(brightnessctl get)" 
