@@ -4,7 +4,7 @@ separator=false
 separator_block_width=1
 
 [window]
-command=xdotool getwindowname $(xdotool getactivewindow)
+command= xdotool getwindowfocus getwindowname 
 label=
 interval=repeat
 
