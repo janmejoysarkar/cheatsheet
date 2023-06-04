@@ -24,7 +24,7 @@ font pango:monospace 11
 # they are included here as an example. Modify as you see fit.
 
 #Screen timeout set to 0s. Change the last digit to change screen timeout.
-exec --no-startup-id xset dpms 0 0 0
+exec --no-startup-id xset dpms 300 300 300
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
