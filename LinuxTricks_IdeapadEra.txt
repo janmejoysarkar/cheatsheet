@@ -286,4 +286,8 @@ Enable autosuspend in i3wm-
 exec --no-startup-id xautolock -time 60 -locker "systemctl suspend"
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
+Use XnView Multiplatform to view .nef images as they are in linux
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
 
