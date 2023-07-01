@@ -113,5 +113,8 @@ with
 ntfs-3g users,uid=1000,dmask=027,fmask=137,x-gvfs-show,utf8 0 0
 Remount the drive.
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Run powerdevil daemon to use kde power management with i3wm-gaps
+/usr/lib/x86_64-linux-gnu/libexec/org_kde_powerdevil & 
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
