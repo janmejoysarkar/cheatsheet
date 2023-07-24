@@ -9,6 +9,17 @@ label=
 interval=repeat
 
 [separator]
+[speed]
+label= MHz
+command= lscpu | grep -i "cpu mhz" | cut -d " " -f27
+interval= 1
+
+[turbo]
+label= NO-TURBO
+command=cat /sys/devices/system/cpu/intel_pstate/no_turbo
+interval=60
+
+[separator]
 
 [memory]
 command=$HOME/.config/i3blocks/memory/memory
@@ -22,6 +33,7 @@ interval=30
 #interval=30
 
 [separator]
+
 
 [disk]
 label=🖴
