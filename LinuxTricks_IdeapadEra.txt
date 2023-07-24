@@ -289,5 +289,22 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Use XnView Multiplatform to view .nef images as they are in linux
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
+Monitor power management:
+
+xset dpms 300 600 900
+xset -dpms #disables Digital Power Management System
+
+Disable screen blanking or screen saver- 
+xset s noblank & #disables screensaver screenblanking
+xset s off & #disables screensaver
+
+Use KDE powerdevil in i3wm for power management-
+/usr/lib/x86_64-linux-gnu/libexec/org_kde_powerdevil & #starts powerdevil to manage power settings from kde settings.
+
+KDE powerdevil uses xset dpms to set monitor power management. So Enabling powerdevil automatically enables dpms.
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+
 
 
