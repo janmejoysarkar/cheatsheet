@@ -303,7 +303,15 @@ Use KDE powerdevil in i3wm for power management-
 
 KDE powerdevil uses xset dpms to set monitor power management. So Enabling powerdevil automatically enables dpms.
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Display Thumbnails for .nef files-
 
+NEF files (and probably lots of other formats) have embedded JPEG's previews in them.
+
+Edit the file /usr/share/thumbnailers/gdk-pixbuf-thumbnailer.thumbnailer to add the missing MIME types.
+Append just image/x-nef;image/x-nikon-nef; for NEF if you want, or you can add all RAW formats (I just did that):
+
+image/x-3fr;image/x-adobe-dng;image/x-arw;image/x-bay;image/x-canon-cr2;image/x-cano
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
 
