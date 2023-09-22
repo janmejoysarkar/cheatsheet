@@ -312,6 +312,25 @@ Append just image/x-nef;image/x-nikon-nef; for NEF if you want, or you can add a
 
 image/x-3fr;image/x-adobe-dng;image/x-arw;image/x-bay;image/x-canon-cr2;image/x-cano
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Show dropbox or other program icons in GNOME 44:
+Use extention- AppIndicator and KStatusNotifierItem Support
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Start ssh service to send/ recieve files:
+sudo systemctl start sshd
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Start bluetooth service:
+
+sudo pacman -S bluez
+sudo pacman -S bluez-utils
+sudo pacman -S blueman
+Blueman is optional, if you do not have a bluetooth manager in the WM or DE.
+
+sudo systemctl start bluetooth.service #to start the service
+sudo systemctl enable bluetooth.service #to enable it automatically
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+
 
 
 
