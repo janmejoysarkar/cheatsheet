@@ -333,7 +333,9 @@ Rclone backup command for backup_esentials.
 -v Verbose
 rclone sync -nv /run/media/janmejoy/backup/backup_essentials/ google_drive:backup/backup_essentials/
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-
+Use gnome shell extention 
+Disable unredirect fullscreen windows
+to prevent tearing of video in vlc or other video players.
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
