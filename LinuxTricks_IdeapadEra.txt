@@ -328,9 +328,11 @@ Blueman is optional, if you do not have a bluetooth manager in the WM or DE.
 sudo systemctl start bluetooth.service #to start the service
 sudo systemctl enable bluetooth.service #to enable it automatically
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-
-
+Rclone backup command for backup_esentials.
+-n Dry-run
+-v Verbose
+rclone sync -nv /run/media/janmejoy/backup/backup_essentials/ google_drive:backup/backup_essentials/
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
 
