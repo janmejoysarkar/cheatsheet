@@ -337,5 +337,12 @@ Use gnome shell extention
 Disable unredirect fullscreen windows
 to prevent tearing of video in vlc or other video players.
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-
+Bluetooth audio connection issues- SL-BD106 BT audio adapter
+bluetoothctl
+power on
+scan on
+remove XX:XX:XX:XX:XX:XX, if it had already been paired
+trust XX:XX:XX:XX:XX:XX
+pair XX:XX:XX:XX:XX:XX
+connect XX:XX:XX:XX:XX:XX
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
