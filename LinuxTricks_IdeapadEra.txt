@@ -346,3 +346,13 @@ trust XX:XX:XX:XX:XX:XX
 pair XX:XX:XX:XX:XX:XX
 connect XX:XX:XX:XX:XX:XX
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Run powerdevil daemon to use kde power management with i3wm-gaps
+/usr/lib/x86_64-linux-gnu/libexec/org_kde_powerdevil & 
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Change screen brightness in GNOME 44
+# Step up
+gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.gnome.SettingsDaemon.Power.Screen.StepUp
+
+# Step down
+gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.gnome.SettingsDaemon.Power.Screen.StepDown
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
