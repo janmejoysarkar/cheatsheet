@@ -359,3 +359,6 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Convert image to black and white- Removes RGB channels and keeps gray only. Uses imagemagick.
 convert image.jpg -colorspace Gray image_bw.jpg
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Remove orphaned dependencies from arch linux-
+sudo pacman -Rsn `pacman -Qdtq`
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
