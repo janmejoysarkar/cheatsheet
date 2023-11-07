@@ -356,3 +356,6 @@ gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gn
 # Step down
 gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.gnome.SettingsDaemon.Power.Screen.StepDown
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Convert image to black and white- Removes RGB channels and keeps gray only. Uses imagemagick.
+convert image.jpg -colorspace Gray image_bw.jpg
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
