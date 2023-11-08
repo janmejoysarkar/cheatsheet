@@ -362,3 +362,19 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Remove orphaned dependencies from arch linux-
 sudo pacman -Rsn `pacman -Qdtq`
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Connect to remote kernel in spyder python
+ensure spyder-kernels is installed on remote machine.
+
+On remote computer-
+jupyter --runtime-dir #copy the output. Gives the console files location.
+python -m spyder_kernels.console #this gives the console file
+
+On local computer-
+scp the console file from remote host to local client.
+Open spyder
+Consoles menu > Connect to an existing kernel
+Add the console file.
+Enable ssh and enter credentials.
+
+The files in the console will be that of the remote machine.
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
