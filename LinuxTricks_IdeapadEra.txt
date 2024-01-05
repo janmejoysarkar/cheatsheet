@@ -378,3 +378,7 @@ Enable ssh and enter credentials.
 
 The files in the console will be that of the remote machine.
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+For fetching old, out of date packages unavailable normally. There are downloaded from mirrors.
+
+Uncomment [multilib] and the next line in /etc/pacman.conf. Do -Sy, and then it found wine.
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
