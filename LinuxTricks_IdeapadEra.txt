@@ -382,3 +382,6 @@ For fetching old, out of date packages unavailable normally. There are downloade
 
 Uncomment [multilib] and the next line in /etc/pacman.conf. Do -Sy, and then it found wine.
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Add new fonts to .fonts and run this to see the fonts enabled in all apps without logout and login
+fc-cache
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
