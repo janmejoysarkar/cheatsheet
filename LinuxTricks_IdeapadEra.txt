@@ -385,3 +385,12 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Add new fonts to .fonts and run this to see the fonts enabled in all apps without logout and login
 fc-cache
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Mount remote file system to local machine.
+sshfs janmejoy@192.168.11.226:/[folder] [mount-location]/
+To unmount- 
+fusermount -u [mount-location]
+
+Same can be done by mounting sftp using nautilus.
+sftp://janmejoy@192.168.11.226
+Unmount can be done with nautilus.
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
