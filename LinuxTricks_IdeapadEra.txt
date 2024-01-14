@@ -245,6 +245,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Replace spaces with underscore- Batch rename
 
 for file in *; do mv "$file" `echo $file | tr ' ' '_'` ; done
+for i in `ls`; do mv $i `echo $i | sed 's/_/-/'` ; done
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Share files
 curl -F "file=@filename" 0x0.st
