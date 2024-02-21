@@ -395,3 +395,9 @@ Same can be done by mounting sftp using nautilus.
 sftp://janmejoy@192.168.11.226
 Unmount can be done with nautilus.
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+To print every 4th line starting from 1st line in file.txt:
+sed -n '1~4p' file.txt
+-n prevents printing everything and gives only what is needed.
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
