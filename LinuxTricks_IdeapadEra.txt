@@ -398,6 +398,11 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 To print every 4th line starting from 1st line in file.txt:
 sed -n '1~4p' file.txt
 -n prevents printing everything and gives only what is needed.
+
+To replace a string with a replacement in the terminal:
+standard string | sed 's/string/replacement/g'
+s: Substitute
+g: global replacement- Make replacements everywhere in the text. Ommit the g for replacin in first instance only.
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Update yay. Yay cannot be updated with pacman.
 
