@@ -410,3 +410,16 @@ git clone https://aur.archlinux.org/yay-bin
 cd yay-bin/
 makepkg -si
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+tmux
+tmux new -s session-name #make new session
+tmux ls #list sessions
+tmux a #attach to last detached session
+tmux a -t session-name #attach to any particular session
+# within a session-
+Ctrl+b > d #detach from session
+Ctrl+b > % #Vertical split the pane
+Ctrl+b > " #Horizontal split the pane
+Ctrl+b > arrow key #Go to window within a pane
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
