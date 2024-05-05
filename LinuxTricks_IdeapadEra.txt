@@ -421,5 +421,7 @@ Ctrl+b > % #Vertical split the pane
 Ctrl+b > " #Horizontal split the pane
 Ctrl+b > arrow key #Go to window within a pane
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
+Make a tarball:
+tar -zcvf tarball.tar file1 file2 file3
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
