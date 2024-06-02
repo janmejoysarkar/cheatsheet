@@ -424,4 +424,8 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Make a tarball:
 tar -zcvf tarball.tar file1 file2 file3
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
+Keep Firefox top panel from disappearing in Full Screen mode
+Type about:config on Firefox address bar.
+Search for browser.fullscreen.autohide
+Toggle to false
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
