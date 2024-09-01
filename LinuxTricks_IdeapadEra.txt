@@ -437,3 +437,10 @@ ffmpeg -framerate 1 -pattern_type glob -i '*.jpg' -c:v libx264 -r 30 -pix_fmt yu
 https://shotstack.io/learn/use-ffmpeg-to-convert-images-to-video/
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
+Format a disk partition with the ext4 file system using the following command:
+sudo mkfs -t ext4 /dev/sdb1 #replace ext4 with fat32 or ntfs
+
+2. Next, verify the file system change using the command:
+lsblk -f
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
