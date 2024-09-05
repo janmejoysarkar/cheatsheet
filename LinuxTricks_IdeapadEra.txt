@@ -443,4 +443,6 @@ sudo mkfs -t ext4 /dev/sdb1 #replace ext4 with fat32 or ntfs
 2. Next, verify the file system change using the command:
 lsblk -f
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
+Install gvim to emable copying to system clipboard in X display server.
+Install jedi-vim to enable python support in vim.
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
