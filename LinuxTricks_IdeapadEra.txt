@@ -448,6 +448,11 @@ Install jedi-vim to enable python support in vim.
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Update all packages in a Conda environment
 conda update -n ENVIRONMENT --all
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Follow symlinks in SSHFS:
+sshfs -o follow_symlinks remote-folder mount-loc
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
 
 Update conda- Updates conda itself. This has to be done in the base environ.
 conda update -n base -c defaults conda
