@@ -452,8 +452,13 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Follow symlinks in SSHFS:
 sshfs -o follow_symlinks remote-folder mount-loc
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-
 Update conda- Updates conda itself. This has to be done in the base environ.
 conda update -n base -c defaults conda
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Copy outside to clipboard from Vim:
+Install gvim. It installs dependencies that allows to copy outside.
+In vim- 
+Select by Visual Block
+Press "+y to yank to the + register. 
+Paste outside.
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
