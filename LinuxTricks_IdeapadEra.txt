@@ -462,3 +462,7 @@ Select by Visual Block
 Press "+y to yank to the + register. 
 Paste outside.
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Apply TMUX config file
+tmux source ~/.tmux.conf
+Default config file location: ~/.tmux.conf
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
