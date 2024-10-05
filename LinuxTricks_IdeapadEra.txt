@@ -462,6 +462,9 @@ Select by Visual Block
 Press "+y to yank to the + register. 
 Paste outside.
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Connect Logitech MX Master 3S to arch linux:
+The sequence that always works for me is remove device (if I messed up last time and the pairing ended up in a broken state) → put mouse into pairing mode → search for devices → trust mouse → pair mouse.
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Apply TMUX config file
 tmux source ~/.tmux.conf
 Default config file location: ~/.tmux.conf
