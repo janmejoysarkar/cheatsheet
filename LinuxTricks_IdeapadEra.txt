@@ -474,3 +474,7 @@ sudo pacman -Sc
 Remove all package cache (not recommended)
 sudo pacman -Scc
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Check kernel version:
+uname -a
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
