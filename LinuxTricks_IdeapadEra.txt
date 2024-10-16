@@ -469,3 +469,8 @@ Apply TMUX config file
 tmux source ~/.tmux.conf
 Default config file location: ~/.tmux.conf
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Remove all package cache except those installed:
+sudo pacman -Sc
+Remove all package cache (not recommended)
+sudo pacman -Scc
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
