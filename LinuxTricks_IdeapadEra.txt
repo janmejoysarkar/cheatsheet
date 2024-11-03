@@ -480,5 +480,11 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Shows which package uses a file
 pacman -Qo file-name
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Add black padding to make square images-
+for img in *; do
+magick $img -gravity center -background black -extent "%[fx:max(w,h)]x%[fx:max(w,h)]" square_$img;
+done
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
 
 
