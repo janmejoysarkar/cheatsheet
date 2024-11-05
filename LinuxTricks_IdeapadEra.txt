@@ -485,6 +485,37 @@ for img in *; do
 magick $img -auto-orient -gravity center -background black -extent "%[fx:max(w,h)]x%[fx:max(w,h)]" square_$img;
 done
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Enable CoC-vim
+Install nodejs-lts from pacman (vim-plug dependency)
 
+Install and automatically run vim-plug
+#Place the following code in your .vimrc before plug#begin() call
+'''
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+'''
+# Note that --sync flag is used to block the execution until the installer finishes.
+# https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
+
+#Add coc-vim as a plugin in the ~/.vimrc
+plug#begin()
+" Use release branch (recommended)
+'''
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+plug#end()
+'''
+#restart Vim and run 
+:PlugInstall
+
+#Install python interpreter
+:CocInstall coc-jedi
+Note: this extension is incompatible with coc-python. Uninstall coc-python before using coc-jedi.
+
+Use the following example vim config for better keybinds- 
+https://github.com/neoclide/coc.nvim?tab=readme-ov-file#example-vim-configuration
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
