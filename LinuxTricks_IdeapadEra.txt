@@ -518,4 +518,11 @@ Use the following example vim config for better keybinds-
 https://github.com/neoclide/coc.nvim?tab=readme-ov-file#example-vim-configuration
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
+Install the CoC plugin in vim-
+:CocInstall coc-snippets
+
+Make and write python snippets file. Add required snippets here:
+~/.config/coc/ultisnips/python.snippets
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
