@@ -501,11 +501,11 @@ endif
 # https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
 
 #Add coc-vim as a plugin in the ~/.vimrc
-plug#begin()
+call plug#begin()
 " Use release branch (recommended)
 '''
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-plug#end()
+call plug#end()
 '''
 #restart Vim and run 
 :PlugInstall
