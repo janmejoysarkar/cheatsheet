@@ -487,7 +487,7 @@ done
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Enable CoC-vim
 Install nodejs-lts from pacman (vim-plug dependency)
-
+Install npm
 Install and automatically run vim-plug
 #Place the following code in your .vimrc before plug#begin() call
 '''
