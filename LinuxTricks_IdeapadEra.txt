@@ -528,14 +528,14 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Download files of a filetype from a website with wget in present directory
 
 BASE_URL="give_url_here"
-wget -r -A "*.jpg, *.JPG" . "$BASE_URL"
+wget -r -A -nd "*.jpg, *.JPG" . "$BASE_URL"
 
 -r: Enables recursive downloading.
 -A "*.jpg": Specifies file types to accept
+-nd: Saves all files in the output directory without recreating the folder structure.
 
 Other options:
 -l1: Limits recursion to 1 level.
--nd: Saves all files in the output directory without recreating the folder structure.
 -P "$OUTPUT_DIR": Specifies the output directory.
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
