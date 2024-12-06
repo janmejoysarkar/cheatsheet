@@ -538,5 +538,16 @@ Other options:
 -l1: Limits recursion to 1 level.
 -P "$OUTPUT_DIR": Specifies the output directory.
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-
+Branch management in Git and Git Remote
+#Make a new branch-
+git branch <branch-name>
+#Go to new branch
+git checkout <branch-name>
+#Merge branch
+git checkout master
+git merge <branch-name> #Merges branch with branch you are currently in
+git push origin <branch-name> # To push the branch to remote
+#Delete branch
+git branch -d <branch-name>
+git push origin --delete <branch-name> #Deletes branch from remote
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
