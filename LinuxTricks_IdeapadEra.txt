@@ -551,3 +551,8 @@ git push origin <branch-name> # To push the branch to remote
 git branch -d <branch-name>
 git push origin --delete <branch-name> #Deletes branch from remote
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Disable auto indenting in vim while pasting
+:set paste
+Enable auto indenting
+:set nopaste
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
