@@ -556,3 +556,11 @@ Disable auto indenting in vim while pasting
 Enable auto indenting
 :set nopaste
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Remove Gnome and all Gnome related software-
+pacman -Runs gnome
+
+-u, --unneeded
+           Removes the targets that are not required by any other packages.
+           This is mostly useful when removing a group without using the -c
+           option, to avoid breaking any dependencies.
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
