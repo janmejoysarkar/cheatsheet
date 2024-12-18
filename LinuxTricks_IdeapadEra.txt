@@ -564,3 +564,9 @@ pacman -Runs gnome
            This is mostly useful when removing a group without using the -c
            option, to avoid breaking any dependencies.
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Disable automatic activation of conda environment:
+conda config --set auto_activate_base false
+
+Enable:
+conda activate <env>
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
