@@ -570,3 +570,7 @@ conda config --set auto_activate_base false
 Enable:
 conda activate <env>
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Using CPUPOWER to manage power usage by CPU-
+sudo cpupower frequency-set --max 800MHz #Sets max frequency
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
