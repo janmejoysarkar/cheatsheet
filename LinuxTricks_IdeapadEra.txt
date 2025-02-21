@@ -573,4 +573,8 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Using CPUPOWER to manage power usage by CPU-
 sudo cpupower frequency-set --max 800MHz #Sets max frequency
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
+To check battery devices and battery capacity:
+upower -e #Shows battery devices
+upower -i /org/freedesktop/UPower/devices/battery_BAT0 #Shows battery capacity. 
+#The argument can be found as an output from upower -e
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
