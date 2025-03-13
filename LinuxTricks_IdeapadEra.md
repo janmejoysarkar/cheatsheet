@@ -89,9 +89,10 @@ Method 2. This will require altering the default theme. Make a backup of `/usr/s
 Now the panel(s) become semi-transparent. As a bonus the main menu also becomes semi-transparent with blur effect under it.\
 https://itectec.com/ubuntu/ubuntu-how-to-make-kde-plasma-taskbar-panel-transparent/
 
-## Icon Pack used: ePapirus
+## Icon Pack used
+```ePapirus```
 
-# KDE Plasma Window Tiling:
+## KDE Plasma Window Tiling:
 Krohnkite script on Kwin scripts in KDE Plasma
 
 Enable Krohnkite settings:
