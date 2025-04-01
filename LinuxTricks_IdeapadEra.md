@@ -138,35 +138,35 @@ sudo apt install qt5ct
 - Launch qt5ct to modify fonts and iconpacks.
 - Logout and login to see the changes.
 
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Enable tap to click on touchpad with X11. Works to enable tap to click on i3wm.
 
-https://cravencode.com/post/essentials/enable-tap-to-click-in-i3wm/
+## Enable tap to click on touchpad with X11. Works to enable tap to click on i3wm.
 
-X11 provides configurations in a directory “X11/xorg.conf.d/” this directory could live in various places on your system depending on your distribution.
-
-However, X11 will always attempt to also load configurations from /etc/X11/xorg.conf.d/ when present.
-
-To ensure the directory exists, run:
-
+- https://cravencode.com/post/essentials/enable-tap-to-click-in-i3wm/
+- X11 provides configurations in a directory “X11/xorg.conf.d/” this directory could live in various places on your system depending on your distribution.
+- However, X11 will always attempt to also load configurations from /etc/X11/xorg.conf.d/ when present.
+- To ensure the directory exists, run:
+```
 sudo mkdir -p /etc/X11/xorg.conf.d
-Copy code
-Next we’ll create a new file “90-touchpad.conf”. The configuration file names end with .conf and are read in ASCII order—by convention file names begin with two digits followed by a dash.
-
+```
+- Copy code
+- Next we’ll create a new file “90-touchpad.conf”. The configuration file names end with .conf and are read in ASCII order—by convention file names begin with two digits followed by a dash.
+```
 sudo touch /etc/X11/xorg.conf.d/90-touchpad.conf
-Copy code
-Now open up the file your editor of choice (with suitable write permission of course) and paste the following:
-
+```
+- Copy code
+- Now open up the file your editor of choice (with suitable write permission of course) and paste the following:
+```
 Section "InputClass"
         Identifier "touchpad"
         MatchIsTouchpad "on"
         Driver "libinput"
         Option "Tapping" "on"
 EndSection
-Copy code
-Additional libinput options
-Libinput support additional options beyond tapping, you can add and configure each one by adding them on new lines after Option "Tapping" "on" in your /etc/X11/xorg.conf.d/90-touchpad.conf, for example:
-
+```
+- Copy code
+- Additional libinput options
+- Libinput support additional options beyond tapping, you can add and configure each one by adding them on new lines after Option "Tapping" "on" in your /etc/X11/xorg.conf.d/90-touchpad.conf, for example:
+```
 Section "InputClass"
         Identifier "touchpad"
         MatchIsTouchpad "on"
@@ -176,32 +176,37 @@ Section "InputClass"
         Option "NaturalScrolling" "on"
         Option "ScrollMethod" "twofinger"
 EndSection
-Copy code
-Two and three finger tap
-Two and three finger tap configurations can be set with to have two finger tap to cause a right-click and three finger tap to cause a middle-click with:
-
-        Option "TappingButtonMap" "lrm"
-Copy code
-Or two make a two finger tap do a middle-click and a three finger tap to cause a right-click:
-
-        Option "TappingButtonMap" "lmr"
-Copy code
-Natural scrolling
-Natural scrolling can be enabled with:
-
-        Option "NaturalScrolling" "on"
-Copy code
-Scroll method
-Two scroll with two fingers, the default:
+```
+- Copy code
+- Two and three finger tap
+- Two and three finger tap configurations can be set with to have two finger tap to cause a right-click and three finger tap to cause a middle-click with:
+```
+Option "TappingButtonMap" "lrm"
+```
+- Copy code
+- Or two make a two finger tap do a middle-click and a three finger tap to cause a right-click:
+```
+Option "TappingButtonMap" "lmr"
+```
+- Copy code
+- Natural scrolling
+- Natural scrolling can be enabled with:
+```
+Option "NaturalScrolling" "on"
+```
+- Copy code
+- Scroll method
+- Two scroll with two fingers, the default:
 
         Option "ScrollMethod" "twofinger"
-Copy code
-If you prefer to use the edge of your touchpad:
+-Copy code
+- If you prefer to use the edge of your touchpad:
 
         Option "ScrollMethod" "edge"
-Copy code
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Bluetooth speakers connection
+-Copy code
+
+
+## Bluetooth speakers connection
 
 http://leetschau.github.io/manage-bluetooth-in-i3wm.html
 
@@ -588,4 +593,7 @@ Add new user:
 sudo mkdir /home/username
 sudo useradd username
 sudo passwd username #Set password
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Change default apps:
+modify ~/.config/mimeapps.list
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
