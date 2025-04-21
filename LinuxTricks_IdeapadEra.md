@@ -597,6 +597,13 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Change default apps:
 modify ~/.config/mimeapps.list
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Setup nvim
+- Install nvim.
+- mkdir ~/.config/nvim
+- make file init.vim
+- install vimplug from junegunn/vimplug
+- Use CoC for python completion
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Latex compilation with short output-
 latexmk -pdf -silent THESIS.tex
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
