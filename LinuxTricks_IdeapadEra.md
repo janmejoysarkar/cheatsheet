@@ -211,37 +211,37 @@ Option "NaturalScrolling" "on"
 http://leetschau.github.io/manage-bluetooth-in-i3wm.html
 
 Turn ON or OFF BT adapter:
+```
 rfkill list #shows which devices are blocked
 rfkill unblock bluetooth #enable bluetooth
 rfkill block bluetooth  #disable bluetooth
 
-systemctl status bluetooth.service
- (if it is enabled)
-(other options- systemctl [start/stop] bluetooth.service)
+systemctl status bluetooth.service #(if it is enabled)
+#(other options- systemctl [start/stop] bluetooth.service)
 
 bluetoothctl power on
 scan on
 devices #to see list of devices
 connect [MAC ID]
 scan off
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Suspend session
-systemctl suspend
-#this does not lock the screen
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Use brightnessctl without sudo:
+```
 
+## Suspend session
+```systemctl suspend #this does not lock the screen```
+
+## Use ` brightnessctl ` without sudo:
 As per udev rules in /usr/lib/udev/rules.d/90-brightnessctl.rules user in video group can change brightness without sudo.
 
 Add user to video group-
-sudo usermod -aG video ${USER}
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Enable/Disable conda base environment from starting in bash
+```sudo usermod -aG video ${USER}```
 
-conda config --set auto_activate_base false
+
+## Enable/Disable conda base environment from starting in bash
+
+```conda config --set auto_activate_base false```
 The first time you run it, it'll create a .condarc in your home directory with that setting to override the default. This wouldn't de-clutter your .bash_profile but it's a cleaner solution without manual editing that section that conda manages.
 
-To enable base environ- conda config --set auto_activate_base true
+To enable base environ- `conda config --set auto_activate_base true`
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Set power key to lock and suspend
@@ -567,43 +567,59 @@ Disable auto indenting in vim while pasting
 Enable auto indenting
 :set nopaste
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Remove Gnome and all Gnome related software-
-pacman -Runs gnome
+
+## Remove Gnome and all Gnome related software-
+``` pacman -Runs gnome ```
 
 -u, --unneeded
            Removes the targets that are not required by any other packages.
            This is mostly useful when removing a group without using the -c
            option, to avoid breaking any dependencies.
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Disable automatic activation of conda environment:
-conda config --set auto_activate_base false
+           
 
+## Disable automatic activation of conda environment:
+
+```conda config --set auto_activate_base false```
 Enable:
-conda activate <env>
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Using CPUPOWER to manage power usage by CPU-
-sudo cpupower frequency-set --max 800MHz #Sets max frequency
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-To check battery devices and battery capacity:
+```conda activate <env>```
+
+## Using CPUPOWER to manage power usage by CPU-
+```sudo cpupower frequency-set --max 800MHz #Sets max frequency```
+
+
+## To check battery devices and battery capacity:
+```
 upower -e #Shows battery devices
 upower -i /org/freedesktop/UPower/devices/battery_BAT0 #Shows battery capacity. 
-#The argument can be found as an output from upower -e
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Add new user:
+```
+The argument can be found as an output from upower -e
+
+
+## Add new user:
+```
 sudo mkdir /home/username
 sudo useradd username
 sudo passwd username #Set password
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Change default apps:
-modify ~/.config/mimeapps.list
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Setup nvim
+```
+
+## Change default apps:
+Modify the file `~/.config/mimeapps.list`
+
+## Setup nvim
 - Install nvim.
 - mkdir ~/.config/nvim
 - make file init.vim
 - install vimplug from junegunn/vimplug
 - Use CoC for python completion
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Latex compilation with short output-
-latexmk -pdf -silent THESIS.tex
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+## Latex compilation with short output-
+`latexmk -pdf -silent THESIS.tex`
+
+
+## Make bare repo for dotfiles:
+The repo will be called `dot`. It will be managed in a folder called .dotfiles
+```
+git init --bare $HOME/.dotfiles
+alias dot='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' >> ~/.bashrc
+```
