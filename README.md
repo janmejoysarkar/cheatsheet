@@ -1,2 +1,2 @@
-# linuxscripts
-Simple scripts that make my life easy.
+# 👀 Cheatsheet
+Simple cheatsheet to make my life easier.
