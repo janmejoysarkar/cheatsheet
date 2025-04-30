@@ -243,113 +243,108 @@ The first time you run it, it'll create a .condarc in your home directory with t
 
 To enable base environ- `conda config --set auto_activate_base true`
 
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Set power key to lock and suspend
 
-install xss-lock to lock the screen before it suspends. xss-lock is started by the i3config by default.
+## Set power key to lock and suspend
+install `xss-lock` to lock the screen before it suspends. `xss-lock` is started by the `i3config` by default.
 
-edit the file- /etc/systemd/logind.conf
+edit the file- `/etc/systemd/logind.conf`
 Uncomment 2 options and edit them as follows-
+```
 HandlePowerKey=suspend
 PowerKeyIgnoreInhibited=yes
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Replace spaces with underscore- Batch rename
+```
 
+### Replace spaces with underscore- Batch rename
+```
 for file in *; do mv "$file" `echo $file | tr ' ' '_'` ; done
 for i in `ls`; do mv $i `echo $i | sed 's/_/-/'` ; done
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Share files
-curl -F "file=@filename" 0x0.st
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
 
-Change Running CPUs:
+## Share files online through null pointer
+```curl -F "file=@filename" 0x0.st```
+
+
+## Change Running CPUs:
+```
 echo 0 > /sys/devices/system/cpu/cpu3/online #disable CPUs
 echo 1 > /sys/devices/system/cpu/cpu3/online #enable CPUs
-
+```
 Change intel turbo boost (Saves a lot of battery power. Increases battery life > 2x)
 
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
 Disable turbo boost (with root):
-echo 1 > /sys/devices/system/cpu/intel_pstate/no_turbo
+```
+echo 1 > /sys/devices/system/cpu/intel_pstate/no_turbo #Disable
+echo 0 > /sys/devices/system/cpu/intel_pstate/no_turbo #Enable
+```
 
-Enable turbo boost (with root):
-echo 0 > /sys/devices/system/cpu/intel_pstate/no_turbo
+## gpg encryption with default AES-256
 
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+- Encryption: `gpg -c --no-symkey-cache file.txt`
+- Decryption: `gpg -d --no-symkey-cache file.txt`
 
-gpg encryption with default AES-256
+`--no-symkey-cache` Prevents adding the passphrase to the gpg pw cache (or keyring). So passphrase has to be entered for decryption and encryption every time.
 
-Encryption:
-gpg -c --no-symkey-cache file.txt
+## Password generator
+``` pwgen```
 
-Decryption:
-gpg -d --no-symkey-cache file.txt
+## Enable autosuspend in i3wm-
+```exec --no-startup-id xautolock -time 60 -locker "systemctl suspend"```
 
---no-symkey-cache Prevents adding the passphrase to the gpg pw cache (or keyring). So passphrase has to be entered for decryption and encryption every time.
+## View .nef files
+Use `XnView Multiplatform` to view `.nef` images as they are in linux
 
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Display Thumbnails for .nef files-  
+NEF files (and probably lots of other formats) have embedded JPEG's previews in them.  
+Edit the file `/usr/share/thumbnailers/gdk-pixbuf-thumbnailer.thumbnailer` to add the missing MIME types.
+Append just `image/x-nef;image/x-nikon-nef;` for NEF if you want, or you can add all RAW formats (I just did that):
+`image/x-3fr;image/x-adobe-dng;image/x-arw;image/x-bay;image/x-canon-cr2;image/x-cano`
 
-Password generator: pwgen
-
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-Enable autosuspend in i3wm-
-exec --no-startup-id xautolock -time 60 -locker "systemctl suspend"
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-Use XnView Multiplatform to view .nef images as they are in linux
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-Monitor power management:
-
+## Monitor power management:
+```
 xset dpms 300 600 900
 xset -dpms #disables Digital Power Management System
-
+```
 Disable screen blanking or screen saver- 
+```
 xset s noblank & #disables screensaver screenblanking
 xset s off & #disables screensaver
-
+```
 Use KDE powerdevil in i3wm for power management-
-/usr/lib/x86_64-linux-gnu/libexec/org_kde_powerdevil & #starts powerdevil to manage power settings from kde settings.
 
+`/usr/lib/x86_64-linux-gnu/libexec/org_kde_powerdevil & #starts powerdevil` to manage power settings from kde settings.
 KDE powerdevil uses xset dpms to set monitor power management. So Enabling powerdevil automatically enables dpms.
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Display Thumbnails for .nef files-
 
-NEF files (and probably lots of other formats) have embedded JPEG's previews in them.
+## Show dropbox or other program icons in GNOME 44:
+Use extention- `AppIndicator` and `KStatusNotifierItem` Support
 
-Edit the file /usr/share/thumbnailers/gdk-pixbuf-thumbnailer.thumbnailer to add the missing MIME types.
-Append just image/x-nef;image/x-nikon-nef; for NEF if you want, or you can add all RAW formats (I just did that):
-
-image/x-3fr;image/x-adobe-dng;image/x-arw;image/x-bay;image/x-canon-cr2;image/x-cano
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Show dropbox or other program icons in GNOME 44:
-Use extention- AppIndicator and KStatusNotifierItem Support
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Start ssh service to send/ recieve files:
+## Start ssh service to send/ recieve files:
+```
 sudo systemctl start sshd
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Start bluetooth service:
+```
 
+## Start bluetooth service:
+```
 sudo pacman -S bluez
 sudo pacman -S bluez-utils
 sudo pacman -S blueman
+```
 Blueman is optional, if you do not have a bluetooth manager in the WM or DE.
-
+```
 sudo systemctl start bluetooth.service #to start the service
 sudo systemctl enable bluetooth.service #to enable it automatically
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Rclone backup command for backup_esentials.
--n Dry-run
--v Verbose
-rclone sync -nv /run/media/janmejoy/backup/backup_essentials/ google_drive:backup/backup_essentials/
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Use gnome shell extention 
-Disable unredirect fullscreen windows
-to prevent tearing of video in vlc or other video players.
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Bluetooth audio connection issues- SL-BD106 BT audio adapter
+```
+
+## Rclone backup command for backup_esentials.
+```rclone sync -nv /run/media/janmejoy/backup/backup_essentials/ google_drive:backup/backup_essentials/```
++ `-n Dry-run`
++ `-v Verbose`
+
+## Use gnome shell extention 
+Disable unredirect fullscreen windows to prevent tearing of video in vlc or other video players.
+
+## Bluetooth audio connection issues- 
+* SL-BD106 BT audio adapter * 
+```
 bluetoothctl
 power on
 scan on
@@ -357,53 +352,59 @@ remove XX:XX:XX:XX:XX:XX, if it had already been paired
 trust XX:XX:XX:XX:XX:XX
 pair XX:XX:XX:XX:XX:XX
 connect XX:XX:XX:XX:XX:XX
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Run powerdevil daemon to use kde power management with i3wm-gaps
-/usr/lib/x86_64-linux-gnu/libexec/org_kde_powerdevil & 
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Change screen brightness in GNOME 44
-# Step up
-gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.gnome.SettingsDaemon.Power.Screen.StepUp
+```
 
-# Step down
-gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.gnome.SettingsDaemon.Power.Screen.StepDown
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Convert image to black and white- Removes RGB channels and keeps gray only. Uses imagemagick.
-convert image.jpg -colorspace Gray image_bw.jpg
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Remove orphaned dependencies from arch linux-
+## Change screen brightness in GNOME 44
+- Step up
+```gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.gnome.SettingsDaemon.Power.Screen.StepUp```
+- Step down
+```gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.gnome.SettingsDaemon.Power.Screen.StepDown```
+
+
+## Convert image to black and white
+Removes RGB channels and keeps gray only. Uses imagemagick.
+```convert image.jpg -colorspace Gray image_bw.jpg```
+
+## Remove orphaned dependencies from arch linux
+```
 sudo pacman -Rsn `pacman -Qdtq`
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Connect to remote kernel in spyder python
-ensure spyder-kernels is installed on remote machine.
+```
 
-On remote computer-
+## Connect to remote kernel in spyder python
+ensure `spyder-kernels` is installed on remote machine.
+
+## On remote computer-
+```
 jupyter --runtime-dir #copy the output. Gives the console files location.
 python -m spyder_kernels.console #this gives the console file
-
+```
 On local computer-
-scp the console file from remote host to local client.
-Open spyder
-Consoles menu > Connect to an existing kernel
-Add the console file.
-Enable ssh and enter credentials.
++ `scp` the console file from remote host to local client.
++ Open `spyder`
++ `Consoles menu > Connect` to an existing kernel
++ Add the console file.
++ Enable `ssh` and enter credentials.
++ The files in the console will be that of the remote machine.
 
-The files in the console will be that of the remote machine.
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-For fetching old, out of date packages unavailable normally. There are downloaded from mirrors.
 
-Uncomment [multilib] and the next line in /etc/pacman.conf. Do -Sy, and then it found wine.
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Add new fonts to .fonts and run this to see the fonts enabled in all apps without logout and login
-fc-cache
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Mount remote file system to local machine.
+## For fetching old, out of date packages unavailable normally.
+They are downloaded from mirrors.
+Uncomment `[multilib]` and the next line in `/etc/pacman.conf`. Do `-Sy`, and then it found.
+
+## Enable newly added fonts
+Add new fonts to `.fonts` and run this to see the fonts enabled in all apps without logout and login
+```fc-cache```
+
+
+## Mount remote file system to local machine.
+```
 sshfs janmejoy@192.168.11.226:/[folder] [mount-location]/
 sshfs -o follow_symlinks janmejoy@192.168.11.226:/scratch sftp_drive/ #to follow remote symlinks
-
+```
 To unmount- 
+```
 fusermount -u [mount-location]
-
+```
 
 Same can be done by mounting sftp using nautilus.
 sftp://janmejoy@192.168.11.226
@@ -616,10 +617,15 @@ Modify the file `~/.config/mimeapps.list`
 ## Latex compilation with short output-
 `latexmk -pdf -silent THESIS.tex`
 
-
 ## Make bare repo for dotfiles:
 The repo will be called `dot`. It will be managed in a folder called .dotfiles
 ```
 git init --bare $HOME/.dotfiles
 alias dot='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' >> ~/.bashrc
 ```
+## Git: Show/Add only tracked files
+Show status of tracked files
+```git status -uno```
+
+Stage files that have been changed.
+```git add -u```
