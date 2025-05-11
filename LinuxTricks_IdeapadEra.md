@@ -626,6 +626,33 @@ alias dot='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' >> ~/.bashr
 ## Git: Show/Add only tracked files
 Show status of tracked files
 ```git status -uno```
-
 Stage files that have been changed.
 ```git add -u```
+
+
+## Configure printer
+```sudo pacman -S cups system-config-printer```
+
+** For HP printers **
+```sudo pacman -S hplip python-pyqt5 python-dbus python-reportlab sane```
+
+** Enable CUPS **
+```
+sudo systemctl enable cups.service
+sudo systemctl start cups.service
+```
+** Get the right PPD files **
+```sudo hp-setup```
+
+Select network printers and configure them accordingly.
+Printers should now be available.
+
+** Monitor or further tweak printers using CUPS: **
+```http://localhost:631 #CUPS Config```
+
+- Click "Administration"
+- Select "Add Printer"
+- Follow the prompts (you may need to log in with your username/password)
+
+*** CUPS GUI ***
+sudo pacman -S system-config-printer
