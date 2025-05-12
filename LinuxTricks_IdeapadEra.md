@@ -409,148 +409,169 @@ fusermount -u [mount-location]
 Same can be done by mounting sftp using nautilus.
 sftp://janmejoy@192.168.11.226
 Unmount can be done with nautilus.
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-To print every 4th line starting from 1st line in file.txt:
-sed -n '1~4p' file.txt
--n prevents printing everything and gives only what is needed.
 
-To replace a string with a replacement in the terminal:
-standard string | sed 's/string/replacement/g'
-s: Substitute
-g: global replacement- Make replacements everywhere in the text. Ommit the g for replacin in first instance only.
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Update yay. Yay cannot be updated with pacman.
 
+## To print every 4th line starting from 1st line in file.txt:
+
+```sed -n '1~4p' file.txt```
+`-n` prevents printing everything and gives only what is needed.
+
+## To replace a string with a replacement in the terminal:
+```standard string | sed 's/string/replacement/g'```
+- `s`: Substitute
+- `g`: global replacement- Make replacements everywhere in the text. Ommit the g for replacin in first instance only.
+
+## Update yay. Yay cannot be updated with pacman.
+```
 git clone https://aur.archlinux.org/yay-bin
 cd yay-bin/
 makepkg -si
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-tmux
+```
+
+## tmux
+```
 tmux new -s session-name #make new session
 tmux ls #list sessions
 tmux a #attach to last detached session
 tmux a -t session-name #attach to any particular session
-# within a session-
-Ctrl+b > d #detach from session
-Ctrl+b > % #Vertical split the pane
-Ctrl+b > " #Horizontal split the pane
-Ctrl+b > arrow key #Go to window within a pane
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Make a tarball:
-tar -zcvf tarball.tar file1 file2 file3
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Keep Firefox top panel from disappearing in Full Screen mode
-Type about:config on Firefox address bar.
-Search for browser.fullscreen.autohide
-Toggle to false
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Make video from still images- ffmpeg
+```
+within a session-
+- `Ctrl+b` > d #detach from session
+- `Ctrl+b` > % #Vertical split the pane
+- `Ctrl+b` > " #Horizontal split the pane
+- `Ctrl+b` > arrow key #Go to window within a pane
+
+
+## Make a tarball:
+```tar -zcvf tarball.tar file1 file2 file3```
+
+
+## Keep Firefox top panel from disappearing in Full Screen mode
+- Type about:config on Firefox address bar.
+- Search for browser.fullscreen.autohide
+- Toggle to false
+
+
+## Make video from still images- ffmpeg
+```
 ffmpeg -framerate 1 -pattern_type glob -i '*.jpg' -c:v libx264 -r 30 -pix_fmt yuv420p output.mp4
+```
 https://shotstack.io/learn/use-ffmpeg-to-convert-images-to-video/
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-Format a disk partition with the ext4 file system using the following command:
-sudo mkfs -t ext4 /dev/sdb1 #replace ext4 with fat32 or ntfs
 
-2. Next, verify the file system change using the command:
-lsblk -f
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Install gvim to emable copying to system clipboard in X display server.
-Install jedi-vim to enable python support in vim.
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Update all packages in a Conda environment
-conda update -n ENVIRONMENT --all
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Follow symlinks in SSHFS:
-sshfs -o follow_symlinks remote-folder mount-loc
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Update conda- Updates conda itself. This has to be done in the base environ.
-conda update -n base -c defaults conda
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Copy outside to clipboard from Vim:
-Install gvim. It installs dependencies that allows to copy outside.
+## Format a disk partition with the ext4 file system using the following command:
+```sudo mkfs -t ext4 /dev/sdb1 #replace ext4 with fat32 or ntfs```
+Next, verify the file system change using the command:
+```lsblk -f```
+
+## Install gvim to emable copying to system clipboard in X display server.
+Install `jedi-vim` to enable python support in `vim`.
+
+
+## Update all packages in a Conda environment
+```conda update -n ENVIRONMENT --all```
+
+
+## Follow symlinks in SSHFS:
+```sshfs -o follow_symlinks remote-folder mount-loc```
+
+
+## Update conda
+Updates conda itself. This has to be done in the base environ.
+```conda update -n base -c defaults conda```
+
+
+## Copy outside to clipboard from Vim:
+
+- Install gvim. It installs dependencies that allows to copy outside.
 In vim- 
-Select by Visual Block
-Press "+y to yank to the + register. 
-Paste outside.
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Connect Logitech MX Master 3S to arch linux:
+- Select by Visual Block
+- Press `"+y` to yank to the + register. 
+- Paste outside.
+
+
+## Connect Logitech MX Master 3S to arch linux:
 The sequence that always works for me is remove device (if I messed up last time and the pairing ended up in a broken state) → put mouse into pairing mode → search for devices → trust mouse → pair mouse.
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Apply TMUX config file
-tmux source ~/.tmux.conf
-Default config file location: ~/.tmux.conf
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Remove all package cache except those installed:
-sudo pacman -Sc
-Remove all package cache (not recommended)
-sudo pacman -Scc
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Check kernel version:
-uname -a
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Shows which package uses a file
-pacman -Qo file-name
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Add black padding to make square images-
+
+
+## Apply TMUX config file
+```tmux source ~/.tmux.conf```
+Default config file location: `~/.tmux.conf`
+
+
+## Remove all package cache except those installed:
+```sudo pacman -Sc```
+
+## Remove all package cache (not recommended)
+```sudo pacman -Scc```
+
+
+## Check kernel version:
+```uname -a```
+
+
+## Shows which package uses a file
+```pacman -Qo file-name```
+
+## Add black padding to make square images-
+```
 for img in *; do echo $img;
 magick $img -auto-orient -gravity center -background black -extent "%[fx:max(w,h)]x%[fx:max(w,h)]" square_$img;
 done
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Enable CoC-vim
-Install nodejs-lts from pacman (vim-plug dependency)
-Install npm
-Install and automatically run vim-plug
-#Place the following code in your .vimrc before plug#begin() call
-'''
+```
+
+## Enable CoC-vim
+- Install nodejs-lts from pacman (vim-plug dependency)
+- Install npm
+- Install and automatically run vim-plug
+- Place the following code in your `.vimrc` before `plug#begin()` call
+```
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
-'''
-# Note that --sync flag is used to block the execution until the installer finishes.
-# https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
-
-#Add coc-vim as a plugin in the ~/.vimrc
+```
+- Note that --sync flag is used to block the execution until the installer finishes.
+- https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
+- Add coc-vim as a plugin in the ~/.vimrc
+```
 call plug#begin()
 " Use release branch (recommended)
-'''
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
-'''
-#restart Vim and run 
-:PlugInstall
+```
+- restart Vim and run `:PlugInstall`
 
-#Install python interpreter
-:CocInstall coc-jedi
-Note: this extension is incompatible with coc-python. Uninstall coc-python before using coc-jedi.
+- Install python interpreter
+```:CocInstall coc-jedi```
+- Note: this extension is incompatible with coc-python. Uninstall coc-python before using coc-jedi.
 
 Use the following example vim config for better keybinds- 
 https://github.com/neoclide/coc.nvim?tab=readme-ov-file#example-vim-configuration
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-Install the CoC plugin in vim-
-:CocInstall coc-snippets
+- Install the CoC plugin in vim-
+```:CocInstall coc-snippets```
 
-Make and write python snippets file. Add required snippets here:
-~/.config/coc/ultisnips/python.snippets
+- Make and write python snippets file. Add required snippets here:
+```~/.config/coc/ultisnips/python.snippets```
 
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Download files of a filetype from a website with wget in present directory
-
+## Download files of a filetype from a website with wget in present directory
+```
 BASE_URL="give_url_here"
 wget -r -A -nd "*.jpg, *.JPG" . "$BASE_URL"
-
--r: Enables recursive downloading.
--A "*.jpg": Specifies file types to accept
--nd: Saves all files in the output directory without recreating the folder structure.
+```
+- `r`: Enables recursive downloading.
+- `A "*.jpg"`: Specifies file types to accept
+- `nd`: Saves all files in the output directory without recreating the folder structure.
 
 Other options:
--l1: Limits recursion to 1 level.
--P "$OUTPUT_DIR": Specifies the output directory.
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Branch management in Git and Git Remote
+- `l1`: Limits recursion to 1 level.
+-`P "$OUTPUT_DIR"`: Specifies the output directory.
+
+
+## Branch management in Git and Git Remote
+```
 #Make a new branch-
 git branch <branch-name>
 #Go to new branch
@@ -562,12 +583,16 @@ git push origin <branch-name> # To push the branch to remote
 #Delete branch
 git branch -d <branch-name>
 git push origin --delete <branch-name> #Deletes branch from remote
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Disable auto indenting in vim while pasting
+```
+
+## Disable auto indenting in vim while pasting
+```
 :set paste
-Enable auto indenting
+```
+## Enable auto indenting
+```
 :set nopaste
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
 
 ## Remove Gnome and all Gnome related software-
 ``` pacman -Runs gnome ```
