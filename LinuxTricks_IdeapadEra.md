@@ -693,7 +693,7 @@ Printers should now be available.
 ```
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
-- Edit `/etc/mkinitcpio.conf`, in the HOOKS line, ensure resume is after udev and before filesystems, e.g.:
+- Edit `/etc/mkinitcpio.conf`, in the HOOKS line, ensure `resume` is after `udev` and before `filesystems`, e.g.:
 ```
 HOOKS=(base udev autodetect modconf block resume filesystems keyboard fsck)
 ```
