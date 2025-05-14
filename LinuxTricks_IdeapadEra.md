@@ -681,3 +681,27 @@ Printers should now be available.
 
 **CUPS GUI**
 ```sudo pacman -S system-config-printer```
+
+## Enable hibernate
+- Check the UUID of SWAP partition.
+```blkid | grep swap```
+- Copy the UUID
+- Edit the file: ```sudo vim /etc/default/grub```
+- Add to the line ```GRUB_CMDLINE_LINUX_DEFAULT```
+- Like so: ```GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet resume=UUID=xxxx```
+- Regenerate GRUB
+```
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+- Edit `/etc/mkinitcpio.conf`, in the HOOKS line, ensure resume is after udev and before filesystems, e.g.:
+```
+HOOKS=(base udev autodetect modconf block resume filesystems keyboard fsck)
+```
+- Rebuild initramfs
+```
+sudo mkinitcpio -P
+```
+- Hibernation should be available
+```
+sudo systemctl hibernate
+```
