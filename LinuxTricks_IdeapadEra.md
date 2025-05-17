@@ -646,7 +646,7 @@ Modify the file `~/.config/mimeapps.list`
 The repo will be called `dot`. It will be managed in a folder called .dotfiles
 ```
 git init --bare $HOME/.dotfiles
-alias dot='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' >> ~/.bashrc
+alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME' >> ~/.bashrc
 ```
 ## Git: Show/Add only tracked files
 Show status of tracked files
