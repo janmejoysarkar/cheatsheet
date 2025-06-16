@@ -705,3 +705,7 @@ sudo mkinitcpio -P
 ```
 sudo systemctl hibernate
 ```
+
+## Download images from camera
+- Use `dmesg -w` or `lsusb` to check if the camera is detected by USB.
+- Use a camera management software like `rapid-photo-downloader` or `shotwell` (GNOME) or `digikam` (KDE) to import images.
