@@ -640,7 +640,7 @@ Modify the file `~/.config/mimeapps.list`
 
 
 ## Latex compilation with short output-
-`latexmk -pdf -silent THESIS.tex`
+```latexmk -pdf -silent THESIS.tex```
 
 ## Make bare repo for dotfiles:
 The repo will be called `dot`. It will be managed in a folder called .dotfiles
