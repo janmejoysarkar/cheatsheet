@@ -1,3 +1,5 @@
+# Cheatsheet 💡
+
 ## Fix touchpad not working
 Lenovo Ideapad Slim 3 uses ELAN touchpad which is not included in the Linux c=kernel that comes with Ubuntu 20.04LTS. DO the following to solve the issue.
 ```
