@@ -711,3 +711,12 @@ sudo systemctl hibernate
 ## Download images from camera
 - Use `dmesg -w` or `lsusb` to check if the camera is detected by USB.
 - Use a camera management software like `rapid-photo-downloader` or `shotwell` (GNOME) or `digikam` (KDE) to import images.
+
+## Make gif animation from series of images
+```
+convert -delay 20 -loop 0 img*.png output.gif
+```
+-delay 20 → time between frames in 1/100th seconds (i.e., 20 = 0.2 sec)
+-loop 0 → loop forever (use -loop 1 for one-time)
+- img*.png → input files (you can also use *.jpg, etc.)
+- output.gif → output filename
