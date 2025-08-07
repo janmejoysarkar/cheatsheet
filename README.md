@@ -720,3 +720,14 @@ convert -delay 20 -loop 0 img*.png output.gif
 -loop 0 → loop forever (use -loop 1 for one-time)
 - img*.png → input files (you can also use *.jpg, etc.)
 - output.gif → output filename
+
+## Proxy settings in google chrome
+```
+google-chrome-stabe --proxy-auto-detect
+```
+Prompts for proxy login credentials upon opening google chrome.
+
+## Open network login page
+To access a network login page in Google Chrome, open a new tab and enter the network's login URL or a non-HTTPS site like `http://example.com`.
+If that doesn't work, try accessing a router's IP address (like `192.168.1.1`).
+You may also need to open an Incognito or Private window, or try restarting your device.
