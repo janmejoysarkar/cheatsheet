@@ -731,3 +731,12 @@ Prompts for proxy login credentials upon opening google chrome.
 To access a network login page in Google Chrome, open a new tab and enter the network's login URL or a non-HTTPS site like `http://example.com`.
 If that doesn't work, try accessing a router's IP address (like `192.168.1.1`).
 You may also need to open an Incognito or Private window, or try restarting your device.
+
+## Proxy Authentication Script (PAC)
+
+Add these commands to proxy settings in network manager. This will prefer proxy login.
+```
+function FindProxyForURL(url, host) {
+return "PROXY 192.168.3.10:3128";
+}
+```
