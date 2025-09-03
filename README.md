@@ -740,3 +740,38 @@ function FindProxyForURL(url, host) {
 return "PROXY 192.168.3.10:3128";
 }
 ```
+
+## Fork and Pull Requests for GitHub
+
+- Fork the repo on GitHub, then clone your fork
+```
+git clone https://github.com/YOUR-USERNAME/REPO-NAME.git
+cd REPO-NAME
+```
+- Add the original repo as upstream
+```
+git remote add upstream https://github.com/ORIGINAL-OWNER/REPO-NAME.git
+git remote -v   # check remotes
+```
+- Create a new branch for your work
+```
+git checkout -b my-feature-branch
+```
+- Stage and commit changes
+```
+git add .
+git commit -m "Describe your change"
+```
+- Push your branch to your fork
+```
+git push origin my-feature-branch
+```
+- Create a Pull Request on GitHub (from your fork → upstream)
+
+- Keep your fork updated
+```
+git fetch upstream
+git checkout main
+git merge upstream/main
+git push origin main
+```
