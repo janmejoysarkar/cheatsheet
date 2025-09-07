@@ -775,3 +775,9 @@ git checkout main
 git merge upstream/main
 git push origin main
 ```
+
+## Pacman mirrors update
+`cat /etc/pacman.d/mirrorlist`
+- The first line shows the command for the mirror list updation.
+- Run it with sudo.
+- Ensure `reflector` is installed
