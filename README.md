@@ -781,3 +781,8 @@ git push origin main
 - The first line shows the command for the mirror list updation.
 - Run it with sudo.
 - Ensure `reflector` is installed
+
+## Change Time Zone
+- `timedatectl status`
+- To list available zones: `timedatectl list-timezones`
+- To set your time zone: `timedatectl set-timezone Area/Location`
