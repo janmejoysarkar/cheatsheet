@@ -786,3 +786,6 @@ git push origin main
 - `timedatectl status`
 - To list available zones: `timedatectl list-timezones`
 - To set your time zone: `timedatectl set-timezone Area/Location`
+
+## See time for a different time zone
+```TZ=Asia/Kolkata date```
