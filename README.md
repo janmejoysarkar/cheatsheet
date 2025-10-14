@@ -789,3 +789,49 @@ git push origin main
 
 ## See time for a different time zone
 ```TZ=Asia/Kolkata date```
+
+## nvim setup for python development:
+- Download nvim- Either systemwide install, or binary copy for installing in one user.
+For single user install:
+```
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+tar -xzf nvim-linux-x86_64.tar.gz
+cp -r nvim* ~/.local/nvim
+```
+- Add path to bashrc
+```
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+```
+- Install VimPlug
+```
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
+- Add a vim-plug section to `~/.config/nvim/init.vim` for Neovim
+```
+call plug#begin()
+Plug 'https://github.com/preservim/nerdtree' ", {'on': 'NERDTreeToggle'}
+Plug 'https://github.com/vim-airline/vim-airline' " Status bar
+Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
+```
+- Open nvim. Run `:PlugInstall`
+- Install `nodejs` for `coc`
+- For single user install, download `nodejs`. 
+- Place it in `$HOME/.local/node/bin`. Add the path to bashrc.
+`
+export PATH="$HOME/.local/node/bin:$PATH"
+`
+- Open nvim. `:CocInstall coc-jedi`
+- If `coc-jedi` language server is not available install it as follows:
+- `pip3 install --user 'jedi-language-server[all]'
+- Make file `$HOME/.config/nvim/coc-settings.json`
+- Point to the jedi language server
+```
+{
+  "python.jediPath": "/home/sarkarjj/.local/bin/jedi-language-server"
+}
+```
+- Run `:CocRestart` if needed.
+
