@@ -837,6 +837,6 @@ export PATH="$HOME/.local/node/bin:$PATH"
 
 ## Mount remote drive to filesystem- Rclone
 ```
-rclone remotename: ~/folder --daemon
+rclone mount remotename: ~/folder --vfs-cache-mode full --daemon
 ```
 The `--daemon` flag runs it in the background
