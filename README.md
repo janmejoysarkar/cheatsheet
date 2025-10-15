@@ -835,3 +835,8 @@ export PATH="$HOME/.local/node/bin:$PATH"
 ```
 - Run `:CocRestart` if needed.
 
+## Mount remote drive to filesystem- Rclone
+```
+rclone remotename: ~/folder --daemon
+```
+The `--daemon` flag runs it in the background
