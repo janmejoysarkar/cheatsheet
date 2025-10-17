@@ -8,3 +8,5 @@
 ### Config files:
 - tmux config
 - nvim config
+- vim config
+- ultisnips file
