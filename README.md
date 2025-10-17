@@ -840,3 +840,17 @@ export PATH="$HOME/.local/node/bin:$PATH"
 rclone mount remotename: ~/folder --vfs-cache-mode full --daemon
 ```
 The `--daemon` flag runs it in the background
+
+## Installing UltiSnips in vim
+- Add this to `~/.vimrc`
+ ```
+ call plug#begin()
+ Plug 'SirVer/ultisnips'
+ call plug#end()
+```
+- Close and reopen vim.
+- Run `:PlugInstall`
+- Place the snips file in `~/.vim/UltiSnips/python.snippets`
+  
+  
+  
