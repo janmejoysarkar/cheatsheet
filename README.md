@@ -851,6 +851,18 @@ The `--daemon` flag runs it in the background
 - Close and reopen vim.
 - Run `:PlugInstall`
 - Place the snips file in `~/.vim/UltiSnips/python.snippets`
-  
-  
+
+## Conda specifics
+- Make a new environment: `conda create --name <my-env>`
+- Switch to an environment: `conda activate myenv`
+ ### Disable auto-activation of `base`
+ ```
+ conda config --set auto_activate_base false
+ ```
+ - Remove init script from `~/.bashrc`
+ - Initialize conda manually `source ~/anaconda3/etc/profile.d/conda.sh`
+ - `conda activate myenv`
+ 
+
+
   
