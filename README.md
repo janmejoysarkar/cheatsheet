@@ -863,6 +863,18 @@ The `--daemon` flag runs it in the background
  - Initialize conda manually `source ~/anaconda3/etc/profile.d/conda.sh`
  - `conda activate myenv`
  
+## Run tailscale on SOCKS5
+```
+tailscaled --tun=userspace-networking \
+  --socks5-server=localhost:1055 \
+  --state=$HOME/.local/tailscale-data/tailscaled.state \
+  --socket=$HOME/.local/tailscale-data/tailscaled.sock &
+```
+Connect to ssh as such over tailscale
+```
+ssh -o "ProxyCommand=nc -x localhost:1055 %h %p" user@100.x.y.z
+```
+If `nc` is unavailable, use the custom python script to establish connection.
 
 
   
