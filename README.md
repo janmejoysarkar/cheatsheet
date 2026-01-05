@@ -876,5 +876,14 @@ ssh -o "ProxyCommand=nc -x localhost:1055 %h %p" user@100.x.y.z
 ```
 If `nc` is unavailable, use the custom python script to establish connection.
 
-
-  
+## Install AUR packages without helper
+```
+git clone package.git
+cd package
+makepkg -si
+```
+## Change dependencies for AUR packages 
+Particularly useful for ds9 `libxml2-legacy` dependance issue. This is a deprecated package and has been replaced with `/usr/lib/libxml2.so.2`
+- Modify the depends line in `PKGBILD` in the downloaded package.
+- Then run `makepkg -si`
+- The package is installed without the dependance.
