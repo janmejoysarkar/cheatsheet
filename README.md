@@ -887,3 +887,7 @@ Particularly useful for ds9 `libxml2-legacy` dependance issue. This is a depreca
 - Modify the depends line in `PKGBILD` in the downloaded package.
 - Then run `makepkg -si`
 - The package is installed without the dependance.
+
+## Connect phone or other MTP device to GNOME
+```sudo pacman -S gvfs-mtp gvfs-gphoto2 libmtp```
+GVFS means Gnome Virtual File System. It is required to let `nautilus` communicate the MTP device from the kernel to the browser.
