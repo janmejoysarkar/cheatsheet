@@ -891,3 +891,15 @@ Particularly useful for ds9 `libxml2-legacy` dependance issue. This is a depreca
 ## Connect phone or other MTP device to GNOME
 ```sudo pacman -S gvfs-mtp gvfs-gphoto2 libmtp```
 GVFS means Gnome Virtual File System. It is required to let `nautilus` communicate the MTP device from the kernel to the browser.
+
+## Screen recording with `ffmpeg`
+```
+ffmpeg -f x11grab -video_size 1920x1080 -framerate 30 -i :0.0 -c:v libx264 -preset ultrafast -crf 18 output.mp4
+```
+- This only records the first monitor.
+- `-f x11grab`: Tells FFmpeg to grab the X11 display.
+- `-video_size`: Matches your monitor resolution (change to 2560x1440 or whatever you use).
+- `-i :0.0`: The display number (usually :0.0 for a single monitor).
+- `-c:v libx264`: Encodes using the H.264 codec.
+- `-preset ultrafast`: Reduces CPU load during recording so your computer doesn't lag.
+- `-crf 18`: Sets high quality (lower numbers = higher quality).
