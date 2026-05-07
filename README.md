@@ -903,3 +903,16 @@ ffmpeg -f x11grab -video_size 1920x1080 -framerate 30 -i :0.0 -c:v libx264 -pres
 - `-c:v libx264`: Encodes using the H.264 codec.
 - `-preset ultrafast`: Reduces CPU load during recording so your computer doesn't lag.
 - `-crf 18`: Sets high quality (lower numbers = higher quality).
+
+## Git tags and Github release
+```
+git checkout main
+git merge dev
+git commit -m "Merged dev to main"
+git tag -a v1.0.0 -m "Release version 1.0.0"
+```
+- `-a` creates an annotated tag (recommended for releases).
+- `-m` adds a message.
+```
+git push origin v1.0.0
+```
