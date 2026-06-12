@@ -916,3 +916,20 @@ git tag -a v1.0.0 -m "Release version 1.0.0"
 ```
 git push origin v1.0.0
 ```
+## Rclone Dropbox workaround
+It is possible that one would want to access remote Dropbox files from local computer without mounting.
+Sometimes if rclone connection breaks then the mount point gets corrupted. It is not possible to remove the mount point without sudo.
+Best alternative is to connect `rclone` remote using `webdav.` This uses web protocol but allows both read and write.
+The rclone drive can be mounted to `gvfs` with `nautilus` other connections tab.
+
+- Run
+```
+rclone serve webdav Dropbox: --addr localhost:8081 --vfs-cache-mode full
+```
+- Port 8080 is selected by default. But most servers and computers could already be using 8080. Next best alternative is 8081.
+- `--vfs-cache-mode` lets rclone cache some big files to speed up operation times
+- Open `nautilus`. Go to Other Connections.
+- Connect the address `dav://localhost:8081`
+- Now `gvfs` treats it as a remote drive, but it does not interact with FUSE or nfs. So there is no system-level intervention.
+- To access the files on the terminal, browse to `/run/user/$UID/gvfs/foldername`
+
