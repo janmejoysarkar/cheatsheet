@@ -635,11 +635,36 @@ Modify the file `~/.config/mimeapps.list`
 
 ## Setup nvim
 - Install nvim.
-- mkdir ~/.config/nvim
-- make file init.vim
 - install vimplug from junegunn/vimplug
-- Use CoC for python completion
-
+- Install `node` and `npm`- Needed for Coc
+- `pip install jedi-language-server`- In the development env
+- mkdir ~/.config/nvim
+- make file `init.vim`
+- Enter vimplug entry in `init.vim` for Coc
+   ```
+   call plug#begin()
+   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+   call plug#end()
+   ```
+- Open nvim. `:CocInstall coc-pyright`
+- Optional- Put these in nvim config
+   ```
+   "Copy buffers
+   nnoremap Y "+y
+   vnoremap Y "+y
+   
+   "Highlight searched item
+   set hlsearch
+  
+   "Remaps for CoC completion:
+   " Use <Tab> and <S-Tab> to navigate through popup menu
+   inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+   inoremap <silent><expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+   " Use <CR> to confirm completion
+   inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<CR>"
+   " Trigger completion manually
+   inoremap <silent><expr> <C-Space> coc#refresh()
+   ```
 
 ## Latex compilation with short output-
 ```latexmk -pdf -silent THESIS.tex```
