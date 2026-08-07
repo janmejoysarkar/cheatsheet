@@ -958,3 +958,8 @@ rclone serve webdav Dropbox: --addr localhost:8081 --vfs-cache-mode full
 - Now `gvfs` treats it as a remote drive, but it does not interact with FUSE or nfs. So there is no system-level intervention.
 - To access the files on the terminal, browse to `/run/user/$UID/gvfs/foldername`
 
+## Change thinkpad touchpoint sensitivity
+Modify the value in this file
+```
+echo 50 | sudo tee /sys/devices/platform/i8042/serio1/sensitivity
+```
