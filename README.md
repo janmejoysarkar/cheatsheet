@@ -963,3 +963,7 @@ Modify the value in this file
 ```
 echo 50 | sudo tee /sys/devices/platform/i8042/serio1/sensitivity
 ```
+## Change Thinkpad touchpoint speed
+```
+xinput --set-prop "TPPS/2 Elan TrackPoint" "libinput Accel Speed" -0.4
+```
