@@ -967,3 +967,8 @@ echo 50 | sudo tee /sys/devices/platform/i8042/serio1/sensitivity
 ```
 xinput --set-prop "TPPS/2 Elan TrackPoint" "libinput Accel Speed" -0.4
 ```
+## Make `gif` from `png` with `ffmpeg`
+Unlike `convert` this does not crash with 100+ png files.
+```
+ffmpeg -framerate 15 -pattern_type glob -i '*.png' -vf "split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" output.gif
+```
